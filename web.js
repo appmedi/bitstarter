@@ -1,15 +1,10 @@
 var express = require('express');
 
 var app = express.createServer(express.logger());
-index;
+var index;
 
 var fs = require('fs');
-fs.readFileSync('./index.html', function (err, data) {
-    if (err) {
-        throw err;
-    }
-    index = data;
-});
+index = fs.readFileSync('/home/ubuntu/node-js-sample/index.html', 'utf8');
 
 app.get('/', function(request, response) {
   response.send(index);
